@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Olive &amp; Ember | Mediterranean grill, Dubai Marina (demo)</title>
+<meta name="description" content="Demo restaurant website by Hamza Bouakaz: bilingual English and Arabic menu, online ordering and table booking.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Manrope:wght@400;500;600;700&family=Noto+Kufi+Arabic:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--bone:#F4EFE7;--paper:#FBF8F3;--ink:#1D2418;--olive:#3E4A2C;--sumac:#8E1B2E;--zaatar:#A8812A;--muted:#5C6152;--line:#DDD5C7}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Manrope,system-ui,sans-serif;color:var(--ink);background:var(--bone);line-height:1.55}
+[dir=rtl] body,[dir=rtl] .d{font-family:"Noto Kufi Arabic",Manrope,sans-serif}
+img{display:block;max-width:100%}
+a{color:inherit}
+.wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+.d{font-family:"Bricolage Grotesque",Manrope,sans-serif;font-weight:800;letter-spacing:-.02em;line-height:1}
+.demo{background:var(--ink);color:#E9E4DA;font-size:13px;text-align:center;padding:8px 16px}
+.demo a{color:#F0C76A}
+header{position:sticky;top:0;z-index:20;background:rgba(244,239,231,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:16px;height:68px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font-size:22px}
+.logo svg{flex:none}
+.links{display:flex;gap:26px;font-weight:600;font-size:15px}
+.links a{text-decoration:none}
+.links a:hover{color:var(--sumac)}
+.right{display:flex;gap:10px;align-items:center}
+.lang{font:inherit;font-weight:700;font-size:14px;border:1.5px solid var(--ink);background:transparent;border-radius:999px;padding:8px 14px;cursor:pointer}
+.btn{display:inline-flex;align-items:center;gap:8px;font:inherit;font-weight:700;font-size:15px;border:0;border-radius:999px;padding:13px 22px;cursor:pointer;text-decoration:none;transition:transform .25s ease,background .25s ease}
+.btn:hover{transform:translateY(-2px)}
+.btn-red{background:var(--sumac);color:#fff}
+.btn-red:hover{background:#74121F}
+.btn-line{border:1.5px solid currentColor;background:transparent}
+:focus-visible{outline:3px solid var(--zaatar);outline-offset:3px}
+.hero{position:relative;min-height:88vh;display:flex;align-items:flex-end;color:#fff;overflow:hidden}
+.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale(1.08);animation:zoom 14s ease-out forwards}
+@keyframes zoom{to{transform:scale(1)}}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,18,14,.15) 0%,rgba(20,18,14,.35) 45%,rgba(20,18,14,.85) 100%)}
+.hero .wrap{position:relative;z-index:2;padding-bottom:72px;width:100%}
+.hero h1{font-size:clamp(52px,9vw,128px);margin:0;max-width:11ch}
+.hero p{font-size:20px;max-width:540px;margin:22px 0 30px;color:#EEE7DC}
+.hero .cta{display:flex;flex-wrap:wrap;gap:12px}
+.hero .meta{display:flex;flex-wrap:wrap;gap:10px 28px;margin-top:40px;font-size:15px;color:#E6DECF}
+.rise{opacity:0;transform:translateY(24px);animation:rise .9s cubic-bezier(.2,.8,.2,1) forwards}
+.r2{animation-delay:.15s}.r3{animation-delay:.3s}.r4{animation-delay:.45s}
+@keyframes rise{to{opacity:1;transform:none}}
+section{padding:96px 0}
+.head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:16px 40px;margin-bottom:40px}
+.head h2{font-size:clamp(40px,6vw,72px);margin:0}
+.head p{max-width:420px;margin:0;color:var(--muted);font-size:17px}
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px}
+.tab{font:inherit;font-weight:700;font-size:15px;padding:10px 18px;border-radius:999px;border:1.5px solid var(--ink);background:transparent;cursor:pointer}
+.tab[aria-selected=true]{background:var(--ink);color:var(--bone)}
+.menu{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:22px}
+.dish{background:var(--paper);border-radius:18px;overflow:hidden;border:1px solid var(--line);display:flex;flex-direction:column}
+.dish .ph{height:200px;overflow:hidden}
+.dish img{width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.2,.8,.2,1)}
+.dish:hover img{transform:scale(1.06)}
+.dish .bd{padding:18px 20px 20px;display:flex;flex-direction:column;gap:6px;flex:1}
+.dish .row{display:flex;justify-content:space-between;gap:12px;align-items:baseline}
+.dish h3{margin:0;font-size:19px}
+.price{font-weight:800;color:var(--sumac);white-space:nowrap}
+.dish p{margin:0;color:var(--muted);font-size:15px}
+.add{margin-top:auto;align-self:flex-start;font:inherit;font-weight:700;font-size:14px;border:0;background:#EAE2D3;border-radius:999px;padding:9px 16px;cursor:pointer}
+.add:hover{background:var(--zaatar);color:#fff}
+.tag{display:inline-block;font-size:12px;font-weight:700;color:var(--olive);background:#E3E6D6;border-radius:999px;padding:3px 10px}
+.order{background:var(--olive);color:#F3EFE6}
+.order .grid{display:flex;flex-wrap:wrap;gap:48px;align-items:center}
+.order h2{font-size:clamp(40px,5.5vw,68px);margin:0 0 18px}
+.order .txt{flex:1 1 400px}
+.order .txt p{font-size:18px;color:#DCE0CF;max-width:520px}
+.steps{list-style:none;margin:28px 0 0;padding:0;display:grid;gap:14px}
+.steps li{display:flex;gap:14px;align-items:center;font-weight:600}
+.steps b{width:34px;height:34px;flex:none;border-radius:999px;background:var(--zaatar);color:var(--ink);display:inline-flex;align-items:center;justify-content:center}
+.cart{flex:1 1 340px;background:var(--paper);color:var(--ink);border-radius:20px;padding:26px}
+.cart h3{margin:0 0 14px;font-size:20px}
+.cart ul{list-style:none;margin:0;padding:0;display:grid;gap:10px;min-height:60px}
+.cart li{display:flex;justify-content:space-between;gap:10px;font-size:15px}
+.cart .empty{color:var(--muted)}
+.cart .tot{display:flex;justify-content:space-between;border-top:1px solid var(--line);margin-top:16px;padding-top:14px;font-weight:800;font-size:18px}
+.book .grid{display:flex;flex-wrap:wrap;gap:48px}
+.book .ph{flex:1 1 420px;min-height:420px;border-radius:22px;overflow:hidden}
+.book .ph img{width:100%;height:100%;object-fit:cover}
+form{flex:1 1 380px;display:grid;gap:16px;align-content:start}
+.f2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+label{display:grid;gap:6px;font-weight:600;font-size:14px}
+input,select,textarea{font:inherit;font-size:16px;padding:13px 14px;border:1.5px solid #C9BFAE;border-radius:12px;background:var(--paper);color:var(--ink)}
+.ok{display:none;background:#E3E6D6;border-radius:12px;padding:14px 16px;font-weight:600}
+.ok.show{display:block}
+.visit{background:var(--paper)}
+.visit .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:32px}
+.visit h3{margin:0 0 10px;font-size:20px}
+.visit p{margin:0;color:var(--muted)}
+.map{border:0;width:100%;height:320px;border-radius:18px;margin-top:40px}
+.insta{display:grid;grid-template-columns:repeat(6,1fr);gap:6px}
+.insta img{aspect-ratio:1;object-fit:cover;width:100%}
+footer{background:var(--ink);color:#C9C3B7;padding:44px 0;font-size:14px}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px}
+.wa{position:fixed;right:20px;bottom:20px;z-index:30;width:58px;height:58px;border-radius:999px;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 12px 26px -8px rgba(0,0,0,.4)}
+[dir=rtl] .wa{right:auto;left:20px}
+@media (max-width:820px){.links{display:none}.f2{grid-template-columns:1fr}.insta{grid-template-columns:repeat(3,1fr)}section{padding:72px 0}.hero{min-height:80vh}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rise{opacity:1;transform:none}.hero img{transform:none}}
+</style>
+</head>
+<body>
+<div class="demo" data-i="demo">Demo concept website by Hamza Bouakaz, WordPress developer. Not a real restaurant. <a href="https://github.com/HamzaBkz">Work with me</a></div>
+<header>
+<div class="wrap nav">
+<a class="logo d" href="#top" aria-label="Olive and Ember, home">
+<svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="16" fill="#3E4A2C"/><path d="M17 7c4 4 5 9 0 15-5-6-4-11 0-15z" fill="#A8812A"/><path d="M17 22v6" stroke="#F4EFE7" stroke-width="2"/></svg>
+<span>Olive &amp; Ember</span></a>
+<nav class="links" aria-label="Main">
+<a href="#menu" data-i="nav1">Menu</a><a href="#order" data-i="nav2">Order online</a><a href="#book" data-i="nav3">Book a table</a><a href="#visit" data-i="nav4">Visit</a>
+</nav>
+<div class="right">
+<button class="lang" id="lang" type="button" aria-label="Switch language">العربية</button>
+<a class="btn btn-red" href="#book" data-i="cta">Book a table</a>
+</div>
+</div>
+</header>
+
+<main id="top">
+<section class="hero" style="padding:0">
+<img src="https://images.pexels.com/photos/24206910/pexels-photo-24206910.jpeg?auto=compress&w=1800" alt="Grilled skewers with dips">
+<div class="wrap">
+<h1 class="d rise" data-i="h1">Fire, herbs and good company.</h1>
+<p class="rise r2" data-i="hp">A Mediterranean grill on Dubai Marina. Charcoal kebabs, warm bread from our oven and twenty kinds of mezze to share.</p>
+<div class="cta rise r3">
+<a class="btn btn-red" href="#book" data-i="cta">Book a table</a>
+<a class="btn btn-line" href="#order" data-i="cta2">Order for delivery</a>
+</div>
+<div class="meta rise r4"><span data-i="m1">Open daily 12:00 – 00:00</span><span data-i="m2">Dubai Marina Walk</span><span data-i="m3">Delivery across Marina and JBR</span></div>
+</div>
+</section>
+
+<section id="menu" aria-labelledby="menu-t">
+<div class="wrap">
+<div class="head"><h2 class="d" id="menu-t" data-i="menuT">The menu</h2><p data-i="menuP">Everything is made in our kitchen each morning. Prices in AED, VAT included.</p></div>
+<div class="tabs" role="tablist" aria-label="Menu sections">
+<button class="tab" role="tab" aria-selected="true" data-cat="mezze" data-i="t1">Mezze</button>
+<button class="tab" role="tab" aria-selected="false" data-cat="grill" data-i="t2">From the grill</button>
+<button class="tab" role="tab" aria-selected="false" data-cat="sweet" data-i="t3">To share</button>
+</div>
+<div class="menu" id="dishes" role="tabpanel"></div>
+</div>
+</section>
+
+<section id="order" class="order" aria-labelledby="order-t">
+<div class="wrap grid">
+<div class="txt">
+<h2 class="d" id="order-t" data-i="orderT">Order direct, pay less.</h2>
+<p data-i="orderP">Order on our own site instead of a delivery app: same food, better prices, and 10% off your first order.</p>
+<ol class="steps">
+<li><b>1</b><span data-i="s1">Add dishes from the menu</span></li>
+<li><b>2</b><span data-i="s2">Choose delivery or pick-up</span></li>
+<li><b>3</b><span data-i="s3">Pay online or cash on delivery</span></li>
+</ol>
+</div>
+<div class="cart" aria-live="polite">
+<h3 data-i="cartT">Your order</h3>
+<ul id="cart"><li class="empty" data-i="cartE">Your order is empty. Add dishes from the menu.</li></ul>
+<div class="tot"><span data-i="tot">Total</span><span id="total">AED 0</span></div>
+<button class="btn btn-red" type="button" style="margin-top:18px;width:100%;justify-content:center" id="checkout" data-i="checkout">Checkout</button>
+<p id="cok" role="status" style="margin:12px 0 0;font-size:14px;color:var(--muted)"></p>
+</div>
+</div>
+</section>
+
+<section id="book" class="book" aria-labelledby="book-t">
+<div class="wrap">
+<div class="head"><h2 class="d" id="book-t" data-i="bookT">Book a table</h2><p data-i="bookP">Tables on the terrace face the marina. For groups over 10, message us on WhatsApp.</p></div>
+<div class="grid">
+<div class="ph"><img src="https://images.pexels.com/photos/25907496/pexels-photo-25907496.jpeg?auto=compress&w=1200" alt="Mezze platter with flatbread, hummus and falafel"></div>
+<form id="bform">
+<div class="f2">
+<label><span data-i="fDate">Date</span><input type="date" required></label>
+<label><span data-i="fTime">Time</span><select><option>19:00</option><option>19:30</option><option>20:00</option><option>20:30</option><option>21:00</option><option>21:30</option></select></label>
+</div>
+<div class="f2">
+<label><span data-i="fGuests">Guests</span><select><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>8</option></select></label>
+<label><span data-i="fSeat">Seating</span><select><option data-i="o1">Terrace</option><option data-i="o2">Inside</option></select></label>
+</div>
+<label><span data-i="fName">Name</span><input type="text" autocomplete="name" required></label>
+<label><span data-i="fPhone">Phone or WhatsApp</span><input type="tel" autocomplete="tel" required></label>
+<button class="btn btn-red" type="submit" data-i="fBtn">Confirm booking</button>
+<p class="ok" id="bok" role="status" data-i="fOk">Demo only: in a real site, this booking would be sent to the restaurant by email and WhatsApp.</p>
+</form>
+</div>
+</div>
+</section>
+
+<section id="visit" class="visit" aria-labelledby="visit-t">
+<div class="wrap">
+<div class="head"><h2 class="d" id="visit-t" data-i="visitT">Visit us</h2></div>
+<div class="grid">
+<div><h3 data-i="v1">Where</h3><p data-i="v1p">Dubai Marina Walk, next to the marina promenade. Paid parking in the Marina Mall.</p></div>
+<div><h3 data-i="v2">When</h3><p data-i="v2p">Every day, 12:00 to 00:00. Kitchen closes at 23:30.</p></div>
+<div><h3 data-i="v3">Contact</h3><p>+971 [00 000 0000]<br>hello@[restaurant-domain].ae</p></div>
+</div>
+<iframe class="map" title="Map of Dubai Marina" loading="lazy" src="https://www.google.com/maps?q=Dubai%20Marina%20Walk&output=embed"></iframe>
+</div>
+</section>
+
+<section aria-label="Instagram" style="padding:0">
+<div class="insta">
+<img src="https://images.pexels.com/photos/21856002/pexels-photo-21856002.jpeg?auto=compress&w=400" alt="">
+<img src="https://images.pexels.com/photos/18112923/pexels-photo-18112923.jpeg?auto=compress&w=400" alt="">
+<img src="https://images.pexels.com/photos/35896122/pexels-photo-35896122.jpeg?auto=compress&w=400" alt="">
+<img src="https://images.pexels.com/photos/28241671/pexels-photo-28241671.jpeg?auto=compress&w=400" alt="">
+<img src="https://images.pexels.com/photos/38975537/pexels-photo-38975537.jpeg?auto=compress&w=400" alt="">
+<img src="https://images.pexels.com/photos/29177216/pexels-photo-29177216.jpeg?auto=compress&w=400" alt="">
+</div>
+</section>
+</main>
+
+<footer>
+<div class="wrap">
+<span>© 2026 Olive &amp; Ember (demo). <span data-i="foot">Photos from Pexels.</span></span>
+<span><span data-i="by">Website design and build:</span> <a href="https://github.com/HamzaBkz">Hamza Bouakaz</a></span>
+</div>
+</footer>
+
+<a class="wa" href="#book" aria-label="WhatsApp"><svg width="30" height="30" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.8-1.2.2-.6.2-1.1.1-1.2l-.5-.3z"/></svg></a>
+
+<script>
+const IMG=id=>`https://images.pexels.com/photos/${id}/pexels-photo-${id}.jpeg?auto=compress&w=700`;
+const DISHES={
+mezze:[
+{id:'29253330',p:32,en:['Hummus beiruti','Chickpeas, tahini, lemon, a little chili and parsley.'],ar:['حمص بيروتي','حمص، طحينة، ليمون، قليل من الفلفل والبقدونس.'],tag:['Vegan','نباتي']},
+{id:'18112923',p:36,en:['Tabbouleh','Parsley, mint, tomato, bulgur and pomegranate molasses.'],ar:['تبولة','بقدونس، نعناع، طماطم، برغل ودبس رمان.'],tag:['Vegan','نباتي']},
+{id:'35896122',p:42,en:['Fire-roasted eggplant','Tahini, pomegranate, mint and toasted pine nuts.'],ar:['باذنجان مشوي على الفحم','طحينة، رمان، نعناع وصنوبر محمص.']},
+{id:'21856021',p:38,en:['Warak enab','Vine leaves rolled with rice, herbs and lemon.'],ar:['ورق عنب','ورق عنب محشو بالأرز والأعشاب والليمون.'],tag:['Vegan','نباتي']},
+{id:'38975537',p:44,en:['Fatayer trio','Spinach, cheese and za\'atar pastries, from the oven.'],ar:['تشكيلة فطائر','فطائر سبانخ وجبنة وزعتر من الفرن.']},
+{id:'28241671',p:58,en:['Mezze for two','Hummus, falafel, pickles, moutabal and warm bread.'],ar:['مزة لشخصين','حمص، فلافل، مخللات، متبل وخبز ساخن.']}],
+grill:[
+{id:'24206910',p:89,en:['Mixed grill','Lamb kofta, shish taouk and lamb cubes, with garlic sauce.'],ar:['مشاوي مشكلة','كفتة لحم، شيش طاووق ومكعبات لحم مع الثوم.']},
+{id:'28241705',p:76,en:['Kibbeh and kofta plate','Grilled kibbeh, spiced kofta, dips and pita.'],ar:['طبق كبة وكفتة','كبة مشوية، كفتة متبلة، صلصات وخبز.']},
+{id:'20398080',p:64,en:['Makanek','Lebanese lamb sausages with lemon and molasses.'],ar:['مقانق','نقانق لحم لبنانية بالليمون ودبس الرمان.']},
+{id:'29177216',p:72,en:['Shish taouk feast','Chicken skewers, fries, salads and toum.'],ar:['وليمة شيش طاووق','أسياخ دجاج، بطاطا، سلطات وثوم.']}],
+sweet:[
+{id:'2452060',p:120,en:['Family feast','Six mezze, a mixed grill and bread for four people.'],ar:['وليمة العائلة','ست أطباق مزة، مشاوي مشكلة وخبز لأربعة أشخاص.']},
+{id:'32153518',p:95,en:['Friday spread','Our weekend table: mezze, salads and grilled halloumi.'],ar:['سفرة الجمعة','طاولة نهاية الأسبوع: مزة، سلطات وحلوم مشوي.']},
+{id:'21856002',p:46,en:['Bread basket and dips','Oven bread, za\'atar man\'oushe, hummus and muhammara.'],ar:['سلة خبز وصلصات','خبز الفرن، منقوشة زعتر، حمص ومحمرة.']}]};
+const T={
+en:{lang:'العربية'},
+ar:{lang:'English',demo:'موقع تجريبي من تصميم حمزة بوعكاز، مطور ووردبريس. هذا ليس مطعماً حقيقياً.',nav1:'القائمة',nav2:'اطلب أونلاين',nav3:'احجز طاولة',nav4:'زورونا',cta:'احجز طاولة',cta2:'اطلب للتوصيل',h1:'نار، أعشاب، وصحبة طيبة.',hp:'مشاوي متوسطية على ممشى دبي مارينا. كباب على الفحم، خبز ساخن من فرننا وعشرون نوعاً من المزة للمشاركة.',m1:'مفتوح يومياً ١٢:٠٠ – ٠٠:٠٠',m2:'ممشى دبي مارينا',m3:'توصيل إلى المارينا وجي بي آر',menuT:'القائمة',menuP:'كل الأطباق تُحضَّر في مطبخنا كل صباح. الأسعار بالدرهم وتشمل الضريبة.',t1:'مزة',t2:'من المشوى',t3:'للمشاركة',orderT:'اطلب مباشرة وادفع أقل.',orderP:'اطلب من موقعنا بدلاً من تطبيقات التوصيل: نفس الطعام، أسعار أفضل، وخصم ١٠٪ على طلبك الأول.',s1:'أضف الأطباق من القائمة',s2:'اختر التوصيل أو الاستلام',s3:'ادفع أونلاين أو نقداً عند الاستلام',cartT:'طلبك',cartE:'طلبك فارغ. أضف أطباقاً من القائمة.',tot:'المجموع',checkout:'إتمام الطلب',bookT:'احجز طاولة',bookP:'طاولات التراس تطل على المارينا. للمجموعات أكثر من ١٠ أشخاص، راسلونا على واتساب.',fDate:'التاريخ',fTime:'الوقت',fGuests:'عدد الأشخاص',fSeat:'الجلسة',o1:'التراس',o2:'الداخل',fName:'الاسم',fPhone:'الهاتف أو واتساب',fBtn:'تأكيد الحجز',fOk:'نسخة تجريبية: في الموقع الحقيقي يصل هذا الحجز إلى المطعم عبر البريد وواتساب.',visitT:'زورونا',v1:'العنوان',v1p:'ممشى دبي مارينا، بجانب الكورنيش. مواقف مدفوعة في مارينا مول.',v2:'الأوقات',v2p:'كل يوم من ١٢:٠٠ إلى ٠٠:٠٠. يغلق المطبخ الساعة ١١:٣٠ مساءً.',v3:'التواصل',foot:'الصور من Pexels.',by:'تصميم وتطوير الموقع:',add:'أضف',addE:'Add'}};
+let lang='en',cat='mezze',cart=[];const orig={};
+document.querySelectorAll('[data-i]').forEach(e=>orig[e.dataset.i]=e.textContent);
+const tr=k=>lang==='ar'&&T.ar[k]?T.ar[k]:orig[k];
+function renderDishes(){const box=document.getElementById('dishes');box.innerHTML='';
+DISHES[cat].forEach(d=>{const [n,desc]=d[lang];const el=document.createElement('article');el.className='dish';
+el.innerHTML=`<div class="ph"><img loading="lazy" src="${IMG(d.id)}" alt=""></div><div class="bd"><div class="row"><h3></h3><span class="price">AED ${d.p}</span></div>${d.tag?`<span class="tag">${lang==='ar'?d.tag[1]:d.tag[0]}</span>`:''}<p></p><button class="add" type="button">${lang==='ar'?'+ أضف إلى الطلب':'+ Add to order'}</button></div>`;
+el.querySelector('h3').textContent=n;el.querySelector('p').textContent=desc;el.querySelector('img').alt=n;
+el.querySelector('.add').onclick=()=>{cart.push(d);renderCart();document.getElementById('order').scrollIntoView({behavior:'smooth'})};box.appendChild(el)})}
+function renderCart(){const ul=document.getElementById('cart');ul.innerHTML='';
+if(!cart.length){const li=document.createElement('li');li.className='empty';li.textContent=tr('cartE');ul.appendChild(li)}
+cart.forEach(d=>{const li=document.createElement('li');const a=document.createElement('span');a.textContent=d[lang][0];const b=document.createElement('span');b.textContent='AED '+d.p;li.append(a,b);ul.appendChild(li)});
+document.getElementById('total').textContent='AED '+cart.reduce((s,d)=>s+d.p,0)}
+function setLang(l){lang=l;document.documentElement.lang=l;document.documentElement.dir=l==='ar'?'rtl':'ltr';
+document.querySelectorAll('[data-i]').forEach(e=>e.textContent=tr(e.dataset.i));
+document.getElementById('lang').textContent=l==='ar'?'English':'العربية';renderDishes();renderCart()}
+document.getElementById('lang').onclick=()=>setLang(lang==='en'?'ar':'en');
+document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>{cat=b.dataset.cat;document.querySelectorAll('.tab').forEach(x=>x.setAttribute('aria-selected',x===b));renderDishes()});
+document.getElementById('bform').onsubmit=e=>{e.preventDefault();document.getElementById('bok').classList.add('show')};
+document.getElementById('checkout').onclick=()=>{document.getElementById('cok').textContent=lang==='ar'?'نسخة تجريبية: في الموقع الحقيقي تنتقل هنا إلى الدفع.':'Demo only: on a real site this opens checkout and payment.'};
+renderDishes();
+</script>
+</body>
+</html>
