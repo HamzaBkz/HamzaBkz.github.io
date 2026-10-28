@@ -1,31 +1,49 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-
-	<title>startup!</title>
-	<meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-	<link rel="stylesheet" type="text/css" href="index.css">
-
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hamza Bouakaz | WordPress websites in English, French and Arabic</title>
+<meta name="description" content="Demo websites by Hamza Bouakaz, WordPress and Elementor developer: restaurants, guesthouses and multilingual sites.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Manrope:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F2F2EF;--ink:#121212;--red:#D7262E;--muted:#55554F;--line:#D6D4CC}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Manrope,system-ui,sans-serif;line-height:1.55}
+a{color:inherit}
+.wrap{max-width:1100px;margin:0 auto;padding:0 24px}
+header{display:flex;justify-content:space-between;align-items:center;padding:26px 0;gap:16px;flex-wrap:wrap}
+.mark{font-family:Anton,sans-serif;font-size:22px;letter-spacing:.02em;text-decoration:none}
+.cta{background:var(--ink);color:#fff;text-decoration:none;font-weight:700;border-radius:999px;padding:12px 20px}
+.cta:hover{background:var(--red)}
+h1{font-family:Anton,sans-serif;font-weight:400;font-size:clamp(54px,10vw,128px);line-height:.95;margin:40px 0 24px;text-transform:uppercase;letter-spacing:-.01em}
+h1 span{color:var(--red)}
+.lead{font-size:20px;max-width:620px;color:var(--muted);margin:0 0 56px}
+h2{font-family:Anton,sans-serif;font-weight:400;font-size:34px;margin:0 0 20px;text-transform:uppercase}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;margin-bottom:80px}
+.card{display:block;text-decoration:none;background:#fff;border:1px solid var(--line);border-radius:20px;padding:28px;transition:transform .3s,border-color .3s}
+.card:hover{transform:translateY(-4px);border-color:var(--ink)}
+.card small{font-weight:700;color:var(--red);letter-spacing:.08em;text-transform:uppercase;font-size:12px}
+.card h3{font-size:26px;margin:8px 0}
+.card p{margin:0 0 18px;color:var(--muted)}
+.card b{font-weight:700}
+footer{border-top:1px solid var(--line);padding:30px 0 50px;display:flex;flex-wrap:wrap;gap:12px 28px;color:var(--muted)}
+:focus-visible{outline:3px solid var(--red);outline-offset:3px}
+</style>
 </head>
 <body>
-	<div class="container d-flex align-items-center">
-		<div class="row">
-			<header class="text-center col-12 ">
-				<h1>THE BIGGEST STARTUP EVENT OF THE YEAR</h1>
-			</header>
-			<div class="buffer"></div>
-			<section class="text-center col-12">
-				<hr>
-				<a href="https://mailchi.mp/1e984c2027cb/startup"><button class="btn btn-primary mybtn">find out more</button>
-				</a>
-			</section>
-		</div>
-	</div>
-	
-
+<div class="wrap">
+<header><a class="mark" href="#">HAMZA BOUAKAZ</a><a class="cta" href="mailto:hamzab.dev@outlook.com">Start a project</a></header>
+<h1>Websites in <span>3</span> languages.</h1>
+<p class="lead">I'm a WordPress and Elementor developer. I build websites in English, French and Arabic for restaurants, guesthouses, clinics and small businesses. These are demo sites, so you can see the kind of work I do.</p>
+<h2>Demo sites</h2>
+<div class="grid">
+<a class="card" href="restaurant-demo/"><small>Restaurant · Dubai</small><h3>Olive &amp; Ember</h3><p>English and Arabic menu, online ordering, table booking, WhatsApp and map.</p><b>Open demo →</b></a>
+<a class="card" href="riad-demo/"><small>Guesthouse · Marrakech</small><h3>Riad Dar Nour</h3><p>French, English and Arabic. Rooms, prices and a direct booking form.</p><b>Open demo →</b></a>
+</div>
+<footer><span>hamzab.dev@outlook.com</span><a href="https://www.linkedin.com/in/hamzab-dev">LinkedIn</a><a href="https://www.upwork.com/freelancers/~01e983105fc928e962">Upwork</a><a href="https://www.fiverr.com/hmza19506">Fiverr</a><a href="https://github.com/HamzaBkz">GitHub</a></footer>
+</div>
 </body>
 </html>
