@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Beauty Bar Med Spa | Website concept</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;1,9..144,400&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F6F1EC;--paper:#FFFCF9;--ink:#141212;--brand:#141212;--accent:#B07A6A;--muted:#625A55;--line:#E6DCD3}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Manrope,system-ui,sans-serif;line-height:1.6}
+a{color:inherit}img{display:block;max-width:100%}
+.ribbon{background:var(--ink);color:var(--bg);font-size:13px;text-align:center;padding:8px 16px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+nav{display:flex;align-items:center;justify-content:space-between;padding:22px 0;gap:16px}
+.logo{font-family:"Fraunces",Georgia,serif;font-size:24px;text-decoration:none;letter-spacing:.01em}
+.links{display:flex;gap:26px;font-size:15px}.links a{text-decoration:none;color:var(--muted)}.links a:hover{color:var(--ink)}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--brand);color:#fff;text-decoration:none;font-weight:700;padding:14px 24px;border-radius:999px;transition:transform .2s,background .2s}
+.btn:hover{transform:translateY(-2px)}.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid var(--ink)}
+.hero{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center;padding:40px 0 80px}
+.eyebrow{text-transform:uppercase;letter-spacing:.16em;font-size:12px;font-weight:700;color:var(--accent)}
+h1{font-family:"Fraunces",Georgia,serif;font-weight:400;font-size:clamp(42px,6vw,76px);line-height:1.02;margin:14px 0 20px;letter-spacing:-.01em}
+h1 em{font-style:italic;color:var(--accent)}
+.lead{font-size:19px;color:var(--muted);max-width:520px;margin:0 0 30px}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:30px}
+.stars{display:flex;align-items:center;gap:14px;font-size:15px}.stars b{font-size:22px}.stars span{color:var(--accent);letter-spacing:2px}
+.heroimg{position:relative}.heroimg img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:220px 220px 24px 24px}
+.badge{position:absolute;left:-24px;bottom:40px;background:var(--paper);border-radius:18px;padding:16px 20px;box-shadow:0 20px 40px -18px rgba(0,0,0,.35);font-size:14px}
+.badge b{display:block;font-size:20px}
+section{padding:90px 0}
+h2{font-family:"Fraunces",Georgia,serif;font-weight:400;font-size:clamp(32px,4vw,50px);line-height:1.1;margin:10px 0 18px}
+.sub{color:var(--muted);max-width:560px;margin:0 0 44px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.svc{background:var(--paper);border:1px solid var(--line);border-radius:22px;padding:30px;display:flex;flex-direction:column;transition:transform .25s,border-color .25s}
+.svc:hover{transform:translateY(-4px);border-color:var(--ink)}
+.svc .n{font-size:13px;color:var(--accent);font-weight:700}.svc h3{font-family:"Fraunces",Georgia,serif;font-weight:400;font-size:26px;margin:10px 0 8px}
+.svc p{color:var(--muted);margin:0 0 22px;flex:1}.svc a{font-weight:700;text-decoration:none;font-size:15px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}.chip{border:1px solid var(--line);background:var(--paper);border-radius:999px;padding:9px 16px;text-decoration:none;font-size:14px}
+.dark{background:var(--ink);color:var(--bg)}.dark .sub{color:rgba(255,255,255,.7)}
+.rev{display:grid;grid-template-columns:.8fr 1.2fr;gap:60px;align-items:center}
+.big{font-family:"Fraunces",Georgia,serif;font-size:clamp(80px,12vw,150px);line-height:.9}.big small{display:block;font-family:Manrope;font-size:16px;margin-top:14px;opacity:.75}
+.rev ul{list-style:none;padding:0;margin:0;display:grid;gap:14px}
+.rev li{border:1px solid rgba(255,255,255,.18);border-radius:16px;padding:18px 22px;font-size:18px}
+.rev li::before{content:"★ ";color:var(--accent)}
+.gal{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.gal img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:18px}
+.visit{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+table{width:100%;border-collapse:collapse}td{padding:10px 0;border-bottom:1px solid var(--line)}td:last-child{text-align:right;color:var(--muted)}
+iframe{width:100%;height:100%;min-height:340px;border:0;border-radius:22px}
+footer{padding:40px 0 110px;color:var(--muted);font-size:14px;border-top:1px solid var(--line)}
+.mbar{display:none}
+@media (max-width:860px){
+.links{display:none}.hero,.rev,.visit{grid-template-columns:1fr}.hero{padding-top:10px}.grid{grid-template-columns:1fr}
+.gal{grid-template-columns:1fr 1fr}.badge{left:12px}section{padding:64px 0}
+.mbar{display:flex;position:fixed;left:12px;right:12px;bottom:12px;gap:10px;z-index:9}.mbar a{flex:1;justify-content:center}
+}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+</style>
+</head>
+<body>
+<div class="ribbon">Website concept prepared for Beauty Bar Med Spa by Hamza Bouakaz. Not the official Beauty Bar Med Spa website.</div>
+<div class="wrap">
+<nav><a class="logo" href="#">Beauty Bar Med Spa</a>
+<div class="links"><a href="#services">Treatments</a><a href="#reviews">Reviews</a><a href="#visit">Visit</a></div>
+<a class="btn" href="tel:+19185193847">Book now</a></nav>
+<header class="hero">
+<div>
+<div class="eyebrow">Med spa · South Tulsa</div>
+<h1>Brows, lashes &amp; skin you’ll <em>love</em> waking up to.</h1>
+<p class="lead">Permanent makeup, lash extensions, HydraFacials, lasers and injectables, done by a licensed team in South Tulsa.</p>
+<div class="cta"><a class="btn" href="tel:+19185193847">Book an appointment</a><a class="btn ghost" href="#services">See treatments</a></div>
+<div class="stars"><b>4.8</b><span>★★★★★</span>328 Google reviews</div>
+</div>
+<div class="heroimg"><img src="https://66c0112516a24020ab1b.cdn6.editmysite.com/uploads/b/66c0112516a24020ab1baf9d96a4e16db3de76b1de7a801f45bd7a0a39604d52/IMG_4096%20Large_1790796577.jpeg" alt="The Beauty Bar Med Spa team"><div class="badge"><b>Licensed team</b>Mon–Sat · 9 AM–5 PM</div></div>
+</header>
+</div>
+<section id="services"><div class="wrap">
+<div class="eyebrow">Treatments</div><h2>Every treatment, one place.</h2><p class="sub">Pick what you want to book. Each treatment would get its own page with prices, before and after photos and aftercare.</p>
+<div class="grid"><article class="svc"><span class="n">01</span><h3>Permanent Makeup</h3><p>Microblading, powder brows and lip blush, with a touch-up visit included.</p><a href="tel:+19185193847">Book permanent makeup →</a></article><article class="svc"><span class="n">02</span><h3>Lashes &amp; Spray Tans</h3><p>Lash extensions and fills, plus custom spray tans before your big day.</p><a href="tel:+19185193847">Book lashes →</a></article><article class="svc"><span class="n">03</span><h3>Skin &amp; Lasers</h3><p>HydraFacials and laser treatments for clearer, brighter skin.</p><a href="tel:+19185193847">Book skin →</a></article><article class="svc"><span class="n">04</span><h3>Botox &amp; Filler</h3><p>Botox and Juvéderm by licensed injectors, natural-looking results.</p><a href="tel:+19185193847">Book botox →</a></article><article class="svc"><span class="n">05</span><h3>Waxing &amp; Brows</h3><p>Full body waxing, brow shaping and tinting, done gently.</p><a href="tel:+19185193847">Book waxing →</a></article><article class="svc"><span class="n">06</span><h3>Permanent Jewelry</h3><p>Dainty welded bracelets and anklets, a perfect gift.</p><a href="tel:+19185193847">Book permanent jewelry →</a></article></div>
+<div class="chips"><a class="chip" href="tel:+19185193847">Monthly specials</a><a class="chip" href="tel:+19185193847">Memberships</a><a class="chip" href="tel:+19185193847">Financing</a><a class="chip" href="tel:+19185193847">Gift cards</a><a class="chip" href="tel:+19185193847">Beauty Bar Academy</a></div>
+</div></section>
+<section id="reviews" class="dark"><div class="wrap rev">
+<div class="big">4.8★<small>from 328 reviews on Google</small></div>
+<div><div class="eyebrow">What clients mention most</div><h2>Trusted across Tulsa.</h2><ul><li>Spotless, clean and sanitary studio</li><li>Explains every step before starting</li><li>Natural brows that frame your face</li><li>Makes nervous first-timers feel at ease</li></ul></div>
+</div></section>
+<section><div class="wrap"><div class="eyebrow">Meet the team</div><h2>The faces behind Beauty Bar.</h2><p class="sub">Clients mention our artists by name in their reviews. A real website would give each one a profile and a direct booking link.</p><div class="gal"><img src="https://66c0112516a24020ab1b.cdn6.editmysite.com/uploads/b/66c0112516a24020ab1baf9d96a4e16db3de76b1de7a801f45bd7a0a39604d52/IMG_4092%20Large_1790796764.jpeg" alt="Beauty Bar Med Spa team" loading="lazy"><img src="https://66c0112516a24020ab1b.cdn6.editmysite.com/uploads/b/66c0112516a24020ab1baf9d96a4e16db3de76b1de7a801f45bd7a0a39604d52/IMG_4047%20Large_1790796785.jpeg" alt="Beauty Bar Med Spa team" loading="lazy"><img src="https://66c0112516a24020ab1b.cdn6.editmysite.com/uploads/b/66c0112516a24020ab1baf9d96a4e16db3de76b1de7a801f45bd7a0a39604d52/IMG_4082%20Large_1790796368.jpeg" alt="Beauty Bar Med Spa team" loading="lazy"></div></div></section>
+<section id="visit"><div class="wrap visit">
+<div><div class="eyebrow">Visit</div><h2>9999 S Mingo Rd, Tulsa</h2><p class="sub">9999 S Mingo Rd Ste Q, Tulsa, OK 74133 · <a href="tel:+19185193847">(918) 519-3847</a></p>
+<table><tr><td>Monday – Saturday</td><td>9 AM – 5 PM</td></tr><tr><td>Sunday</td><td>Closed</td></tr></table>
+<div class="cta" style="margin-top:28px"><a class="btn" href="tel:+19185193847">Book now</a><a class="btn ghost" href="sms:+19185193847">Text us</a></div></div>
+<iframe title="Map" loading="lazy" src="https://maps.google.com/maps?q=9999%20S%20Mingo%20Rd%20Ste%20Q%20Tulsa%20OK%2074133&z=15&output=embed"></iframe>
+</div></section>
+<div class="wrap"><footer>Concept by Hamza Bouakaz · hamzab.dev@outlook.com · Photos from Beauty Bar Med Spa's current website. Not affiliated with or endorsed by Beauty Bar Med Spa.</footer></div>
+<div class="mbar"><a class="btn" href="tel:+19185193847">Book now</a><a class="btn ghost" style="background:var(--paper)" href="tel:+19185193847">Call</a></div>
+</body>
+</html>
